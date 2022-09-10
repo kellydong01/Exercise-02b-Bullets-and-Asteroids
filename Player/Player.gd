@@ -11,13 +11,12 @@ var nose = Vector2(0, -60)
 
 
 func _ready():
-	randomize()
+	pass
 
 func _physics_process(_delta):
 	velocity += get_input()*speed
 	velocity = velocity.normalized() * clamp(velocity.length(), 0, max_speed)
 	velocity = move_and_slide(velocity, Vector2.ZERO)
-	position += velocity
 	position.x = wrapf(position.x, 0, 1024)
 	position.y = wrapf(position.y, 0, 600)
 		
